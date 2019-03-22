@@ -15,6 +15,10 @@ switch (comando) {
         funciones.mostrar();
     break
 
+    case 'mostrarest':
+        funciones.mostrarest(argv.nombre);
+    break
+
     default:
     console.log('No ingreso un comndo exitente');
     

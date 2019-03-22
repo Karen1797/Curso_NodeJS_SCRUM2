@@ -41,10 +41,10 @@ const guardar = () => {
     })
 }
 
-
+//Función Mostrar (Read)
 const mostrar = () => {
     listar();
-    listaEstudiantes.map(estudiante => {
+    listaEstudiantes.forEach(estudiante => {
         console.log(estudiante.nombre);
         console.log('notas: ');
         console.log(' Matemáticas ' + estudiante.matematicas);
@@ -52,7 +52,23 @@ const mostrar = () => {
         console.log(' Programación ' + estudiante.programacion + ' \n');
     })
 }
+
+const mostrarest = (nom) => {
+    listar();
+    let est = listaEstudiantes.find(buscar => buscar.nombre ==nom);
+    if(!est){
+        console.log('No existe ese nombre');
+
+    }else{
+        console.log(est.nombre);
+        console.log('notas: ');
+        console.log(' Matemáticas ' + est.matematicas);
+        console.log(' Inglés ' + est.ingles);
+        console.log(' Programación ' + est.programacion + ' \n');
+    }
+}
 module.exports = {
     crear,
-    mostrar
+    mostrar,
+    mostrarest
 }
