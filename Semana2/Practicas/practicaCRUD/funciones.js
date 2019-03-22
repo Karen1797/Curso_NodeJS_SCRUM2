@@ -2,6 +2,7 @@ const fs = require('fs');
 listaEstudiantes = [];
 
 const crear = (estudiante) => {
+    listar();
     let est = {
         nombre: estudiante.nombre,
         matematicas: estudiante.matematicas,
@@ -11,6 +12,20 @@ const crear = (estudiante) => {
     listaEstudiantes.push(est);
     console.log(listaEstudiantes);
     guardar();
+}
+
+//Agregar varios archivos JSON
+const listar = () =>  {
+    try {
+    //Opcion 1
+    listaEstudiantes = require('./Listado.json');
+
+    //Opción 2: Si el JSON varía de forma asincrónica
+    //listaEstudiantes = JSON.parse(fs.readFileSync('Listado.json'));
+    }
+    catch(error) {
+        listaEstudiantes = [];
+    }
 }
 
 const guardar = () => {
