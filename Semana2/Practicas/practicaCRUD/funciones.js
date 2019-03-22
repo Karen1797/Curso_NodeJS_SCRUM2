@@ -19,7 +19,7 @@ const crear = (estudiante) => {
     }
 }
 
-//Agregar varios archivos JSON
+//Agregar varios objetos JSON
 const listar = () =>  {
     try {
     //Opcion 1
@@ -41,6 +41,18 @@ const guardar = () => {
     })
 }
 
+
+const mostrar = () => {
+    listar();
+    listaEstudiantes.map(estudiante => {
+        console.log(estudiante.nombre);
+        console.log('notas: ');
+        console.log(' Matemáticas ' + estudiante.matematicas);
+        console.log(' Inglés ' + estudiante.ingles);
+        console.log(' Programación ' + estudiante.programacion + ' \n');
+    })
+}
 module.exports = {
-    crear
+    crear,
+    mostrar
 }
