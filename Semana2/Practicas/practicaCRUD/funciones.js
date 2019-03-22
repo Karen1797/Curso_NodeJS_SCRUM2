@@ -55,10 +55,9 @@ const mostrar = () => {
 
 const mostrarest = (nom) => {
     listar();
-    let est = listaEstudiantes.find(buscar => buscar.nombre ==nom);
+    let est = listaEstudiantes.find(buscar => buscar.nombre == nom);
     if(!est){
         console.log('No existe ese nombre');
-
     }else{
         console.log(est.nombre);
         console.log('notas: ');
@@ -67,8 +66,25 @@ const mostrarest = (nom) => {
         console.log(' Programación ' + est.programacion + ' \n');
     }
 }
+
+const mostrarMat = () => {
+    listar();
+    //La función filter devuelve un vector
+    let gana = listaEstudiantes.filter(est => est.matematicas >= 3);
+    if(gana.length == 0){
+        console.log('Ningún estudiante ganó');
+    }else{
+        gana.forEach(est => {
+            console.log(est.nombre);
+            console.log('notas: ');
+            console.log(' Matemáticas ' + est.matematicas);
+        });
+    }
+}
+
 module.exports = {
     crear,
     mostrar,
-    mostrarest
+    mostrarest,
+    mostrarMat
 }

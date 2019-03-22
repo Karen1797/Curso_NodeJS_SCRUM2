@@ -19,6 +19,9 @@ switch (comando) {
         funciones.mostrarest(argv.nombre);
     break
 
+    case 'mostrarMat':
+        funciones.mostrarMat();
+    break
     default:
     console.log('No ingreso un comndo exitente');
     
