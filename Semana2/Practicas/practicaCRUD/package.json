@@ -1,0 +1,15 @@
+{
+  "name": "practicacrud",
+  "version": "1.0.0",
+  "description": "CRUD de archivos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "karen1797\u001bqgmail.com\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001bq@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "yargs": "^13.2.2"
+  }
+}

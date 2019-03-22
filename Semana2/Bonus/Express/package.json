@@ -1,0 +1,15 @@
+{
+  "name": "primeraentrega",
+  "version": "1.0.1",
+  "description": "primer trabajo",
+  "main": "\u001b[D\u001b[D\u001b[D\u001bprincipal.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kaaren1797@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "yargs": "^13.2.2"
+  }
+}
