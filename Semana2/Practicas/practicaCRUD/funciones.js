@@ -9,9 +9,14 @@ const crear = (estudiante) => {
         ingles: estudiante.ingles,
         programacion: estudiante.programacion
     };
-    listaEstudiantes.push(est);
-    console.log(listaEstudiantes);
-    guardar();
+    let duplicado = listaEstudiantes.find(nom => nom.nombre == estudiante.nombre);
+    if(!duplicado){
+        listaEstudiantes.push(est);
+        console.log(listaEstudiantes);
+        guardar();
+    }else{
+        console.log('Ya existe un estudiante con ese nombre');
+    }
 }
 
 //Agregar varios archivos JSON
