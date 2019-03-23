@@ -116,11 +116,22 @@ const  promedioEstGanado = () => {
     }
 }
 
+const actualizar = (nombre, asignatura, calificacion) => {
+    listar();
+    let encontrado = listaEstudiantes.find(buscar => buscar.nombre == nombre);
+    if(!encontrado){
+        console.log('No existe ese nombre');
+    }else{
+        encontrado[asignatura] = calificacion;
+        guardar();    }
+}
+
 module.exports = {
     crear,
     mostrar,
     mostrarest,
     mostrarMat,
     promedioEst,
-    promedioEstGanado
+    promedioEstGanado,
+    actualizar
 }

@@ -30,9 +30,13 @@ switch (comando) {
     case 'promedioEstGanado':
         funciones.promedioEstGanado();
     break
-    
+
+    case 'actualizar':
+        funciones.actualizar(argv.nombre, argv.asignatura, argv.calificacion)
+    break
+
     default:
-    console.log('No ingreso un comndo exitente');
+    console.log('No ingreso un comando exitente');
     
 }
 
