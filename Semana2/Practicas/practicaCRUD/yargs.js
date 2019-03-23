@@ -32,7 +32,7 @@ const promedioEst = {
     nombre
 }
 
-//actualizar
+//Actualizar
 const actualizar = {
     nombre,
     asignatura : {
@@ -45,6 +45,11 @@ const actualizar = {
    }
 }
 
+//Eliminar
+const eliminar = {
+    nombre
+}
+
 const argv = require('yargs')
     .command('crear', 'Crear un estudiante', creacion)
     .command('mostrar', 'Muestra los estudiantes y sus notas')
@@ -53,6 +58,7 @@ const argv = require('yargs')
     .command('promedioEst', 'Muestra el promedio del estudiante seleccionado', promedioEst)
     .command('promedioEstGanado', 'Promedio de los estudiantes por encima de 3')
     .command('actualizar','Actualiza la información del curso', actualizar)
+    .command('eliminar', 'Elimina un estudiante', eliminar)
     .argv
 
 module.exports = {

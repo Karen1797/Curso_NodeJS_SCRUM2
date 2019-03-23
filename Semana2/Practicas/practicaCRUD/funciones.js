@@ -123,7 +123,20 @@ const actualizar = (nombre, asignatura, calificacion) => {
         console.log('No existe ese nombre');
     }else{
         encontrado[asignatura] = calificacion;
-        guardar();    }
+        guardar();
+    }
+}
+
+const eliminar = (nombre) => {
+    listar();
+    let nuevo = listaEstudiantes.filter(buscar => buscar.nombre != nombre);
+    if(nuevo.length == listaEstudiantes.length){
+        console.log('No existe un estudiante con ese nombre');
+    }else{
+        listaEstudiantes = nuevo;
+        guardar();
+        
+    }
 }
 
 module.exports = {
@@ -133,5 +146,6 @@ module.exports = {
     mostrarMat,
     promedioEst,
     promedioEstGanado,
-    actualizar
+    actualizar,
+    eliminar
 }
