@@ -114,22 +114,6 @@ const  promedioEstGanado = () => {
             console.log(' Promedio ' + promedio + '\n');
         });
     }
-    /*
-    let sumaMate = 0;
-    let sumaIngles = 0;
-    let sumaProg = 0;
-    let sumas = listaEstudiantes.forEach(nota => {
-        
-        sumaMate += nota.matematicas;
-        sumaIngles += nota.ingles;
-        sumaProg += nota.matematicas;
-        
-    })
-    promedio = (sumaMate + sumaIngles + sumaProg)/3;
-    
-    console.log(promedio)
-    */
-    //let promGanado = listaEstudiantes.filter(prom => prom.)
 }
 
 module.exports = {
