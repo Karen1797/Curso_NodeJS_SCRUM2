@@ -28,13 +28,17 @@ const creacion = {
 const mostrarest = {
     nombre
 }
-
+const promedioEst = {
+    nombre
+}
 
 const argv = require('yargs')
     .command('crear', 'Crear un estudiante', creacion)
     .command('mostrar', 'Muestra los estudiantes y sus notas')
-    .command('mostrarest', 'Muestra el estudiante con el nombre ingresado',mostrarest)
+    .command('mostrarest', 'Muestra el estudiante con el nombre ingresado', mostrarest)
     .command('mostrarMat', 'Muestra si ganó matemáticas')
+    .command('promedioEst', 'Muestra el promedio del estudiante seleccionado', promedioEst)
+    .command('promedioEstGanado', 'Promedio de los estudiantes por encima de 3')
     .argv
 
 module.exports = {

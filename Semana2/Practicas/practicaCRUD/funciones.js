@@ -82,9 +82,61 @@ const mostrarMat = () => {
     }
 }
 
+const promedioEst = (nom) => {
+    listar();
+    let estudiante = listaEstudiantes.find(est => est.nombre == nom);
+    if(!estudiante){
+        console.log('No exite un estudiante con ese nombre');
+    }else{
+        let promedio = (estudiante.matematicas + estudiante.ingles + estudiante.programacion)/3;
+        console.log(estudiante.nombre)
+        console.log('El promedio del estudiante ' + nom + ' es ' + promedio);
+        return promedio
+    }
+}
+
+const  promedioEstGanado = () => {
+    listar();
+
+    let gana = listaEstudiantes.filter(est => {
+        promedio = (est.matematicas + est.ingles + est.programacion)/3
+        if(promedio >= 3){
+            return true
+        }
+    });
+    
+    if(gana.length == 0){
+        console.log('Ningún estudiante ganó');
+    }else{
+        gana.forEach(est => {
+            console.log(est.nombre);
+            console.log('notas: ');
+            console.log(' Promedio ' + promedio + '\n');
+        });
+    }
+    /*
+    let sumaMate = 0;
+    let sumaIngles = 0;
+    let sumaProg = 0;
+    let sumas = listaEstudiantes.forEach(nota => {
+        
+        sumaMate += nota.matematicas;
+        sumaIngles += nota.ingles;
+        sumaProg += nota.matematicas;
+        
+    })
+    promedio = (sumaMate + sumaIngles + sumaProg)/3;
+    
+    console.log(promedio)
+    */
+    //let promGanado = listaEstudiantes.filter(prom => prom.)
+}
+
 module.exports = {
     crear,
     mostrar,
     mostrarest,
-    mostrarMat
+    mostrarMat,
+    promedioEst,
+    promedioEstGanado
 }

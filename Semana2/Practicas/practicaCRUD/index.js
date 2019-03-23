@@ -22,6 +22,15 @@ switch (comando) {
     case 'mostrarMat':
         funciones.mostrarMat();
     break
+
+    case 'promedioEst':
+        funciones.promedioEst(argv.nombre);
+    break
+
+    case 'promedioEstGanado':
+        funciones.promedioEstGanado();
+    break
+    
     default:
     console.log('No ingreso un comndo exitente');
     
