@@ -1,5 +1,15 @@
 {{>header}}
+
     <p>
         Bienvenido a la página de promedio estudiante
     </p>
+
+    <form action='./calculos' method='post'>
+        <input type='text' name='nombre'>
+        <input type='number' name='nota1'>
+        <input type='number' name='nota2'>
+        <input type='number' name='nota3'>
+        <button>Calcular</button>
+    </form>
+
 {{>footer}}
