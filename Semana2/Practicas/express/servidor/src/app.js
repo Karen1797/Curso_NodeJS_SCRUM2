@@ -2,13 +2,21 @@ const express = require ('express');
 const app = express();
 const path = require ('path');
 const hbs = require('hbs');
-require('./helper');
+require('./helpers/helper');
 const bodyParser = require('body-parser');
+const dirNode_modules = path.join(__dirname , '../node_modules')
 
 const directorioPublico = path.join(__dirname,'../public')
 const directorioPartials = path.join(__dirname, '../partials')
 app.use(express.static(directorioPublico));
 hbs.registerPartials(directorioPartials);
+
+//Bootstrap
+app.use('/css', express.static(dirNode_modules + '/bootstrap/dist/css'));
+app.use('/js', express.static(dirNode_modules + '/jquery/dist'));
+app.use('/js', express.static(dirNode_modules + '/popper.js/dist'));
+app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 

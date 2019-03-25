@@ -3,13 +3,14 @@
     <p>
         Bienvenido a la página de promedio estudiante
     </p>
-
-    <form action='./calculos' method='post'>
-        <input type='text' name='nombre'>
-        <input type='number' name='nota1'>
-        <input type='number' name='nota2'>
-        <input type='number' name='nota3'>
-        <button>Calcular</button>
-    </form>
+    <div class = 'container text-center'>
+        <form action='./calculos' method='post' class='row form-group' >
+            <input type='text' name='nombre' class='form-control col-sm-10' placeholder='Nombre' required>
+            <input type='number' name='nota1' class='form-control col-sm-3' placeholder='Nota 1' required>
+            <input type='number' name='nota2' class='form-control col-sm-3' placeholder='Nota 2' required>
+            <input type='number' name='nota3' class='form-control col-sm-3' placeholder='Nota 3' required>
+            <br><button class='btn btn-primary'>Calcular</button>
+        </form>
+    </div>
 
 {{>footer}}
