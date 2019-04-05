@@ -1,0 +1,20 @@
+{
+  "name": "basetercersemana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "hbs": "^4.0.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7",
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
