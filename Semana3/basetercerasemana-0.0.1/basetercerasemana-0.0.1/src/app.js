@@ -4,7 +4,10 @@ const app = express ()
 const path = require('path')
 const hbs = require ('hbs')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+const Estudiante = require('./models/estudiante')
 require('./helpers/helpers')
+require('./config/config');
 
 
 //Paths
@@ -36,13 +39,8 @@ app.get('/', (req, res ) => {
 	})	
 });
 
-app.post('/', (req, res ) => {
 
-	res.render('indexpost', {
-		titulo: 'Inicio',
-		nombre: req.body.usuario		
-	})	
-});
+
 
 app.post('/calculos', (req, res ) => {
 	res.render('calculos', {
@@ -84,9 +82,52 @@ app.get('*',(req,res)=> {
 	})
 });
 
+//app.use(require('./routes/index'));
+
+//MONGODB
+
+//Crear
+
+app.post('/', (req, res ) => {
+	let estudiante = new Estudiante ({
+		nombre: req.body.nombre,
+		matematicas: req.body.matematicas,
+		ingles: req.body.ingles,
+		programacion: req.body.programacion
+	})
+
+	estudiante.save((err, resultado) =>{
+		if(err){
+			res.render('indexpost', {
+				mostrar : err
+			})
+		}
+		res.render('indexpost', {
+			mostrar : resultado
+		})
+	})
+	/*
+	res.render('indexpost', {
+		titulo: 'Inicio',
+		nombre: req.body.usuario		
+	})	*/
+});
+
+//Leer
 
 
 
-app.listen(3000, () => {
-	console.log ('servidor en el puerto 3000')
+//Mongoose
+mongoose.connect('mongodb://localhost:27017/asignaturas',
+	{useNewUrlParser: true}, (err, resultado) => {
+		if(err){
+			return console.log(error)
+		}
+		console.log('Conectado')
+	}
+)
+
+
+app.listen(process.env.PORT, () => {
+	console.log ('servidor en el puerto ' + process.env.PORT)
 });

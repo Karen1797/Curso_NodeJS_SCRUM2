@@ -5,11 +5,13 @@
   "main": "src/app.js",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
     "express": "^4.16.4",
     "hbs": "^4.0.3",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.7",
-    "bootstrap": "^4.3.1"
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.4.22",
+    "popper.js": "^1.15.0"
   },
   "devDependencies": {},
   "scripts": {
